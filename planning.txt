@@ -1,0 +1,46 @@
+Outfit --- OutfitItems -- Items
+
+
+{
+    'name'
+    'top' : {
+        'url'
+    }
+    'bottom': {
+        'url'
+    }
+}
+
+my_fit = Outfit.query.filter(Outfit.id == 1).first()
+my_fit.items
+
+
+Outfit
+- id
+- name
+- user_id
+
+('userA', 'my_fit', 1)
+
+
+
+OutfitItems
+- outfit_id
+- item_id
+(1, 34)
+(1, 35)
+
+
+
+Items
+- id
+- name
+- type
+- img_url
+- user_id
+
+
+
+User
+- id
+- username

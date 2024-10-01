@@ -1,0 +1,279 @@
+@font-face {
+  font-family: "ChicagoFLF";
+  src: local("ChicagoFLF"),
+    url("/fonts/ChicagoFLF.ttf") format("opentype");
+    font-weight: normal;
+}
+
+footer {
+  margin-top: 10%;
+
+  display: inline-block;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* HEADER */
+.header h1{
+  font-family: "Garamond", serif;
+  font-size: 60px; 
+  font-weight: normal;
+  letter-spacing: -0.03em; 
+  text-align: center;
+  margin: 5; 
+  padding: 0;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #f8f8f8;
+  border-bottom: 2px solid #e7e7e7;
+  padding: 10px 0;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-tabs li {
+  margin: 0 15px;
+}
+
+.nav-tabs a {
+  text-decoration: none;
+  padding: 10px 20px;
+  font-family: "ChicagoFLF";
+  font-weight: bold;
+  color: #555;
+  border: 3px solid #e7e7e7;
+  border-radius: 5px 8px 0 0;
+  background-color: #fff;
+}
+
+
+/* NEW ITEM FORM */
+form input, #type-selection{
+  border: none;
+  font-size: 1.2em;
+  border-bottom: 2px solid #d3d3d3;
+  transition: all 0.2s;
+  width: 30%;
+  background-color: #ffffff;
+  padding: 1rem;
+  text-align: left;
+  font-family: "ChicagoFLF";
+  font-weight: lighter;
+}
+
+select {
+  border: 1px solid #d3d3d3;
+  padding: 0.5rem;
+  font-size: 1em;
+  font-family: "ChicagoFLF";
+}
+
+option[disabled] {
+  color: #999;
+  font-style: italic;
+}
+
+form h2 {
+  font-family: "Garamond", serif;
+  font-size: 35px; 
+  font-weight: normal;
+  letter-spacing: -0.06em; 
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid rgb(78, 139, 224);
+}
+
+
+.form-button {
+  display: inline-block;
+  font-family: "Garamond", serif; 
+  font-weight: normal;
+  font-size: 1.4em;
+  letter-spacing: -0.07em; 
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  padding: 5px 20px;
+  border: 1px solid #9d9b9b71;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: #a5a5a56b;
+  cursor: pointer;
+}
+
+/* ITEM */
+.closet-item-img {
+  height: 30vh;
+  box-shadow:  3px 3px  3px 3px rgba(0, 0, 0, 0.52);
+
+}
+
+.closet-item-img:hover {
+  transform: scale(1.05);
+}
+
+
+/* MY CLOSET */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.item-card {
+  list-style-type: none;
+  margin: 1rem;
+  margin-left: 30px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.item-card h2, h3 {
+  font-size: 1rem;
+  font-family: "ChicagoFLF"; 
+  font-weight: normal;
+}
+
+.item-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 3rem;
+}
+
+
+
+/* OUTFIT MAKER*/
+
+.outfit-maker-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 4rem;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.outfit-details-container {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+.outfit-details {
+  margin-bottom: 2rem;
+}
+
+.top-details, .bottom-details {
+  font-family: "ChicagoFLF";
+  font-size: 1.0em;
+  font-weight: normal;
+  letter-spacing: -0.01em;
+  padding: 1rem;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.52);
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.top-details h3, .bottom-details h3 {
+  font-family: "Garamond", serif;
+  font-weight: normal;
+  letter-spacing: -0.07em; 
+  font-size: 1.9rem;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+}
+
+.top-details p, .bottom-details p {
+  margin: 0.5rem 0;
+}
+
+.top-carousel, .bottom-carousel {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+
+
+/* CAROUSEL */
+
+.top-carousel, .bottom-carousel {
+  position: relative;
+  width: 35%;
+  margin: 0 auto;
+  margin-bottom: 1px;
+  overflow: hidden;
+}
+
+.top-carousel-img, .bottom-carousel-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.top-previous-button, .top-next-button, .bottom-previous-button, .bottom-next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.3s;
+}
+
+.top-previous-button:hover, .top-next-button:hover, .bottom-previous-button:hover, .bottom-next-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.top-previous-button, .bottom-previous-button {
+  left: 0;
+}
+
+.top-next-button, .bottom-next-button {
+  right: 0;
+}
+

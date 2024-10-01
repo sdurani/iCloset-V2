@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "image": "/images/sweater1.png",
+      "type": "Top",
+      "brand": "Sunday Best",
+      "size": "M",
+      "description": "green knit wool sweater"
+    },
+    {
+      "id": "2",
+      "image": "/images/jeans1.png",
+      "type": "Bottom",
+      "brand": "Denim Forum",
+      "size": "28",
+      "description": "light wash baggy jeans"
+    },
+    {
+      "id": "3",
+      "image": "https://assets.aritzia.com/image/upload/w_1500/s24_04_a02_114724_1274_off_a",
+      "type": "Top",
+      "brand": "Wilfred",
+      "size": "S",
+      "description": "black halter neck silk top"
+    },
+    {
+      "id": "4",
+      "image": "https://assets.aritzia.com/image/upload/w_900/f24_a06_119038_32774_off_a",
+      "type": "Bottom",
+      "brand": "Aritzia",
+      "size": "L",
+      "description": "green knit sweatpants"
+    },
+    {
+      "id": "0798",
+      "type": "Top",
+      "image": "https://assets.aritzia.com/image/upload/w_900/f24_a03_116209_6046_off_a",
+      "brand": "ARITZIA",
+      "size": "M",
+      "description": "grey hoodie"
+    }
+  ]
+}
