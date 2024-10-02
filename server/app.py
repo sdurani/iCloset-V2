@@ -22,6 +22,7 @@ Migrate(app, db)  # set up db migration tool (alembic)
 CORS(app, supports_credentials=True)  # set up cors
 
 
+
 # BUILD ROUTES HERE -------------------------------------------------------->
 @app.route("/", methods=["POST"])
 def add_item_form():

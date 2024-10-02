@@ -15,8 +15,9 @@ metadata = MetaData(naming_convention={
 db = SQLAlchemy(metadata=metadata)
 bcrypt = Bcrypt()
 
-# BUILD MODELS HERE ---------------------------------------------->
 
+
+# BUILD MODELS HERE ---------------------------------------------->
 class User(db.Model, SerializerMixin):
     __tablename__="users"
 
@@ -60,7 +61,7 @@ class Item(db.Model, SerializerMixin):
     size = db.Column(db.String)
     image = db.Column(db.String)
 
-    outfititems = db.relationship('OutfitItem', back_populates='item', cascade='all, delete-orphan')
+    outfititems = db.relationship('OutfitItem', back_populates='item')
 
     serialize_rules = ('-outfititems.item',)
 
@@ -84,7 +85,7 @@ class OutfitItem(db.Model, SerializerMixin):
     outfit_id = db.Column(db.Integer, db.ForeignKey('outfits.id'), nullable=False)
     item_id = db.Column(db.Integer, db.ForeignKey('items.id'), nullable=False)
 
-    outfit = db.relationship('Outfit', back_populates='outfititems', cascade='all, delete-orphan')
+    outfit = db.relationship('Outfit', back_populates='outfititems')
     item = db.relationship('Item', back_populates='outfititems')
 
     serialize_rules = ('-outfit.outfititems', '-item.outfititems',)
