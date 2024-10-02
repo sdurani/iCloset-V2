@@ -34,7 +34,7 @@ class Outfit(db.Model, SerializerMixin):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     name = db.Column(db.String)
 
-    outfititems = db.relationship('OutfitItem', back_populates='outfit')
+    outfititems = db.relationship('OutfitItem', back_populates='outfit', cascade='all, delete-orphan')
 
     serialize_rules = ('-outfititems.outfit',)
 
