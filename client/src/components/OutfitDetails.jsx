@@ -12,9 +12,9 @@ function OutfitDetails({currentItem, category}) {
         <div className="outfit-details">
             <div className={`${category.toLowerCase()}-details`}>
                 <h3>{`- ${category} Details -`}</h3>
-                <p>"{currentItem.brand}"</p>
+                <p>{currentItem.brand}</p>
                 <p>Size: {currentItem.size}</p>
-                <p>{currentItem.description}</p>
+                <p>"{currentItem.description}"</p>
             </div>
         </div>
 
