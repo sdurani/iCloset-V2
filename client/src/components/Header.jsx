@@ -1,4 +1,5 @@
 import NavBar from "./NavBar.jsx";
+import React from 'react';
 
 
 function Header(){

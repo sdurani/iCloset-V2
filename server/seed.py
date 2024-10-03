@@ -34,7 +34,6 @@ def run():
             brand = "Wilfred",
             size = "S",
             description = "black halter neck silk top",
-            user_id = 1
         ),
         Item(
             image = "https://assets.aritzia.com/image/upload/w_900/f24_a06_119038_32774_off_a",
@@ -42,7 +41,6 @@ def run():
             brand = "Aritzia",
             size = "L",
             description = "green knit sweatpants",
-            user_id = 1
         ),
         Item(
             image = "https://assets.aritzia.com/image/upload/w_900/f24_a03_116209_6046_off_a",
@@ -50,23 +48,21 @@ def run():
             brand = "Nike",
             size = "M",
             description = "grey hoodie",
-            user_id = 1
         ),
         Item(
-            image = "/assets/items/jeans1.png",
+            image = "https://assets.aritzia.com/image/upload/large/s24_10_a06_119432_30426_off_a.jpg",
             category = "Bottom",
             brand = "Denim Forum",
             size = "28",
             description = "light wash baggy jeans",
-            user_id = 1
         ),
         Item(
-            image = "/assets/items/sweater1.png",
+            image = "https://assets.aritzia.com/image/upload/large/f23_04_a03_112762_31916_off_a.jpg",
             category = "Top",
             brand = "Sunday Best",
             size = "M",
             description = "thrifted knit wool sweater",
-            user_id = 1
+            # user_id = 1
         )
     ]
     db.session.add_all(items)
@@ -77,18 +73,13 @@ def run():
     print('Adding outfits...')
     outfits = [
         Outfit(
-            name = "going out",
-            user_id = 1,
-            id = 1
-        ), 
-        Outfit(
             name = "fancy dinner",
-            user_id = 1,
+            # user_id = 1,
             id = 2
         ), 
         Outfit(
             name = "casual friday",
-            user_id = 1,
+            # user_id = 1,
             id = 3
         )
     ]

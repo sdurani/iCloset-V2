@@ -32,7 +32,7 @@ class Outfit(db.Model, SerializerMixin):
     __tablename__="outfits"
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    # user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     name = db.Column(db.String)
 
     outfititems = db.relationship('OutfitItem', back_populates='outfit', cascade='all, delete-orphan')
@@ -54,7 +54,7 @@ class Item(db.Model, SerializerMixin):
     __tablename__="items"
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    # user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     category = db.Column(db.String)
     description = db.Column(db.String)
     brand = db.Column(db.String)

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useOutletContext, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -5,14 +6,17 @@ function NewItemForm(){
 
     const navigate = useNavigate()
 
+   
+
     const [formData, setFormData] = useState({
-        type: "",
+        category: "",
         image: "",
         brand: "",
         size: "",
         description: ""
     })
 
+    
     const {addItem} = useOutletContext()
 
     function handleSubmit(event){
@@ -21,7 +25,7 @@ function NewItemForm(){
         addItem(formData)
 
         setFormData({
-            type: "",
+            category: "",
             image: "",
             brand: "",
             size: "",
@@ -39,7 +43,7 @@ function NewItemForm(){
         <div className="form">
         <form onSubmit={handleSubmit}>
             <h2>Add a new item to My Closet</h2>
-            <select onChange={updateFormData} id="type-selection" name="type" value={formData.type} required>
+            <select onChange={updateFormData} id="type-selection" name="category" value={formData.category} required>
                 <option value="" disabled>Select Item Type...</option>
                 <option value="Top">Top</option>
                 <option value="Bottom">Bottom</option>

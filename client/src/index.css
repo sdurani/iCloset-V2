@@ -277,3 +277,90 @@ ul {
   right: 0;
 }
 
+.closet-container {
+  padding: 20px;
+}
+
+.outfit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Reduced min width */
+  gap: 15px; /* Slightly reduced space between cards */
+}
+
+.outfit-card {
+  background-color: #fff; /* White background */
+  border: 1px solid #ccc; /* Card border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 0px; /* Reduced padding inside cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  text-align: center; /* Center the images */
+  transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.outfit-card:hover {
+  transform: scale(1.03); /* Slightly less enlargement on hover */
+}
+
+.top-item-image, .bottom-item-image {
+  max-width: 90%; /* Adjusted to make images smaller */
+  height: 250px; /* Maintain aspect ratio */
+  margin: 1px auto; /* Center images with margin */
+}
+
+
+.outfit-card h2 {
+  font-family: "Garamond", serif;
+  font-size: 1.9rem;
+  font-weight: normal;
+  letter-spacing: -0.03em; 
+  text-align: center;
+  margin: 4px; 
+  padding: 0;
+}
+
+.save-button {
+  display: inline-block;
+  font-family: "ChicagoFLF";
+  font-weight: lighter;
+  font-size: 1.2em;
+  letter-spacing: -0.07em; 
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  padding: 5px 20px;
+  border: 1px solid #9d9b9b71;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: #a5a5a56b;
+  cursor: pointer;
+}
+
+#outfit-name-input{
+  border: none;
+  font-size: 1.2em;
+  border-bottom: 2px solid #d3d3d3;
+  transition: all 0.2s;
+  width: 30%;
+  background-color: #ffffff;
+  padding: 1rem;
+  text-align: left;
+  font-family: "ChicagoFLF";
+  font-weight: lighter;
+}
+
+#delete-button {
+  display: inline-block;
+  font-family: "ChicagoFLF";
+  font-weight: lighter;
+  font-size: 1.0em;
+  letter-spacing: -0.02em; 
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #9d9b9b71;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: #a5a5a56b;
+  cursor: pointer;
+}

@@ -69,10 +69,7 @@ flask run
 
 ## Database Schema
 
-- **User**: Contains details like name, image, quote, and associated cohort.
-- **Outfit**: Represents a group of students and their instructors.
-- **Items**: Manages the signatures students leave on each other's profiles.
-- **OutfitItems**: Manages the signatures students leave on each other's profiles.
+
 
 ## Example API Endpoints
 

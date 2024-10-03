@@ -1,6 +1,6 @@
-import React,{ useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Outlet } from "react-router-dom";
-import Header from './components/Header';
+import Header from './components/Header.jsx';
 import './App.css'
 
 function App() {
@@ -9,21 +9,27 @@ function App() {
   const [items, setItems] = useState([])
 
   useEffect(() => { 
-    fetch("http://localhost:5173/items")
+    fetch("/api/my_closet")
     .then(response => response.json())
     .then(itemsData => setItems(itemsData))
   }, [])
 
   function addItem(newItem){
-    fetch("http://localhost:5173/items", {
+    fetch("/api/add_item", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+          "Content-Type": "application/json"
       },
       body: JSON.stringify(newItem)
     })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+          return response.json().then(err => Promise.reject(err));
+      }
+      return response.json();
+    })
     .then(newItemData => setItems([...items, newItemData]))
+    .catch(error => console.error('Error:', error));
   }
 
   return (

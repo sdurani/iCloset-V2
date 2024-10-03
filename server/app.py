@@ -15,40 +15,42 @@ app = Flask(
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URI']  # how to connect to the db
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # optional performance thing
-app.secret_key = os.environ['SECRET_KEY'] # grab the secret key from env variables
+# app.secret_key = os.environ['SECRET_KEY'] # grab the secret key from env variables
 
 db.init_app(app)  # link sqlalchemy with flask
 Migrate(app, db)  # set up db migration tool (alembic)
 CORS(app, supports_credentials=True)  # set up cors
 
 
-
 # BUILD ROUTES HERE -------------------------------------------------------->
-@app.route("/", methods=["POST"])
+@app.route('/', methods=['GET'])
+def homepage():
+       return "<h1>| iCloset | </h1>", 200
+
+
+@app.route("/api/add_item", methods=["POST"])
 def add_item_form():
     data = request.get_json()
-    try:
-        new_item = Item(
-            category = data.get("category"),
-            description = data.get("description"),
-            brand = data.get("brand"),
-            size = data.get("size"),
-            image = data.get("image"),
-        )
-    except ValueError:
-        return {"errors": ["validation errors"]}, 400
+    new_item = Item(
+        category = data.get("category"),
+        description = data.get("description"),
+        brand = data.get("brand"),
+        size = data.get("size"),
+        image = data.get("image"),
+    )
+        
     db.session.add(new_item)
     db.session.commit()
-    return new_item.to_dict(), 200
+    return new_item.to_dict(), 201
 
 
-@app.route("/my_closet", methods=["GET"])
+@app.route("/api/my_closet", methods=["GET"])
 def all_items():
     items = Item.query.all()
     return [item.to_dict() for item in items], 200
 
 
-@app.route("/my_closet/<int:id>", methods=["GET", "PATCH", "DELETE"])
+@app.route("/api/my_closet/<int:id>", methods=["GET", "PATCH", "DELETE"])
 def item_by_id(id):
     item = Item.query.filter(Item.id==id).first()
     if request.method == "GET":
@@ -66,7 +68,7 @@ def item_by_id(id):
         return {}, 204
     
 
-@app.route("/outfit_maker", methods=["GET", "POST"])
+@app.route("/api/outfit_maker", methods=["GET", "POST"])
 def make_save_outfits():
     if request.method == "GET":
         items = Item.query.all()
@@ -75,22 +77,39 @@ def make_save_outfits():
         data = request.get_json()
         try:
             new_outfit = Outfit(
-                name = data.get("name")
+                name=data.get("name")
             )
+            db.session.add(new_outfit)
+            db.session.commit()
+
+            top_item_id = data.get("top_item_id")
+            bottom_item_id = data.get("bottom_item_id")
+
+            if top_item_id and bottom_item_id:
+                outfit_item_top = OutfitItem(
+                    outfit_id=new_outfit.id,
+                    item_id=top_item_id
+                )
+                outfit_item_bottom = OutfitItem(
+                    outfit_id=new_outfit.id,
+                    item_id=bottom_item_id
+                )
+                db.session.add(outfit_item_top)
+                db.session.add(outfit_item_bottom)
+                db.session.commit()
+
+            return new_outfit.to_dict(), 201
         except ValueError:
             return {"errors": ["validation errors"]}, 400
-        db.session.add(new_outfit)
-        db.session.commit()
-        return new_outfit.to_dict(), 201
 
 
-@app.route("/outfits", methods=["GET"])
+@app.route("/api/my_outfits", methods=["GET"])
 def all_outfits():
     outfits = Outfit.query.all()
     return [outfit.to_dict() for outfit in outfits], 200
 
 
-@app.route("/outfits/<int:id>", methods=["DELETE"])
+@app.route("/api/my_outfits/<int:id>", methods=["DELETE"])
 def outfit_by_id(id):
     outfit = Outfit.query.filter(Outfit.id==id).first()
     db.session.delete(outfit)
