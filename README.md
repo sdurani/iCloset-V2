@@ -51,7 +51,8 @@ flask run
 ## Features
 
 - **Interactive Closet**: Browse through and discard each clothing item with ease.
-- **Outfit Maker**: Explore your unique style by mixing and matching pieces to create an outfit for every occasion and add it to your collection for a creative interactive experience.
+- **Outfit Maker**: Explore your creativity by mixing and matching pieces to create an outfit for any occasion.
+- **Interactive Outfit Collection**: Curate your unique style by saving outfits to your personal collection.
 
 ## Tech Stack
 
