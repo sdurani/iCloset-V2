@@ -6,7 +6,7 @@ import OutfitDetails from "./OutfitDetails.jsx";
 
 function OutfitMaker() {
 
-    const {items} = useOutletContext()
+    const {items, setItems} = useOutletContext()
 
 
     // create the state for the displayed item
@@ -18,6 +18,7 @@ function OutfitMaker() {
     
     useEffect(() => {
         if (items.length > 0) {
+            setItems(items)
             // filter out just the tops type
             const tops = items.filter((item) => item.category === "Top");
 
@@ -75,16 +76,18 @@ function OutfitMaker() {
             <div className="outfit-details-container">
                 <OutfitDetails currentItem={currentTopItem} category="Top" />
                 <OutfitDetails currentItem={currentBottomItem} category="Bottom" />
+                <div className="save-outfit-container">
+                    <input 
+                        type="text" 
+                        placeholder="Enter outfit name" 
+                        value={outfitName} required
+                        id="outfit-name-input" 
+                        name="name"
+                        onChange={(e) => setOutfitName(e.target.value)} 
+                    />
+                    <button className="save-button" onClick={saveOutfit}>Save Outfit 🌟</button>
+                </div>
             </div>
-            <input 
-                type="text" 
-                placeholder="Enter outfit name" 
-                value={outfitName} required
-                id="outfit-name-input" 
-                name="name"
-                onChange={(e) => setOutfitName(e.target.value)} 
-            />
-            <button className="save-button" onClick={saveOutfit}>Save Outfit 🌟</button>
         </div>
     );
 }

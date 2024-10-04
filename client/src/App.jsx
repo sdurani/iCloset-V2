@@ -7,6 +7,7 @@ function App() {
 
 
   const [items, setItems] = useState([])
+  const [outfits, setOutfits] = useState([]);
 
   useEffect(() => { 
     fetch("/api/my_closet")
@@ -33,15 +34,17 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className='App'>
       <Header/>
       <Outlet context={{
           items: items,
-          addItem: addItem
-
+          setItems: setItems,
+          addItem: addItem,
+          outfits: outfits, // Pass outfits state here
+          setOutfits: setOutfits // Pass setOutfits function here
         }}/>
         <footer>
-           <p>Copyright &#169; 2024 iCloset. All Rights Reserved.</p>
+          <p>Copyright &#169; 2024 iCloset. All Rights Reserved.</p>
         </footer>
     </div>
     

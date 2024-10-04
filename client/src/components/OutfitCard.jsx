@@ -21,7 +21,7 @@ function OutfitCard({ outfit, onDelete }) {
                     <img src={bottomItem.item.image} alt="Bottom Item" className="bottom-item-image" />
                 )}
             </div>
-            <button id="delete-button" onClick={handleDelete}>Delete 🗑️</button>
+            <button id="delete-outfit-button" onClick={handleDelete}>❌</button>
         </div>
     );
 }

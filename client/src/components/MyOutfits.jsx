@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import OutfitCard from './OutfitCard';
+import { Outlet } from "react-router-dom";
 
 function MyOutfits() {
     const [outfits, setOutfits] = useState([]);
@@ -35,6 +36,10 @@ function MyOutfits() {
                     <OutfitCard key={outfit.id} outfit={outfit} onDelete={handleDelete} />
                 ))}
             </div>
+            <Outlet context={{
+                outfits: outfits,
+                setOutfits: setOutfits
+            }}/>
         </div>
     );
 }

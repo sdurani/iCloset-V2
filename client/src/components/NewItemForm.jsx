@@ -42,7 +42,6 @@ function NewItemForm(){
     return (
         <div className="form">
         <form onSubmit={handleSubmit}>
-            <h2>Add a new item to My Closet</h2>
             <select onChange={updateFormData} id="type-selection" name="category" value={formData.category} required>
                 <option value="" disabled>Select Item Type...</option>
                 <option value="Top">Top</option>
