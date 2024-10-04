@@ -1,6 +1,8 @@
 Outfit --- OutfitItems -- Items
 
 - **Authentication**: Restricted access to ensure that the user's item images and details are kept private with secure login.
+## Database Schema
+## Example API Endpoints
 
 {
     'name'

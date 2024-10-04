@@ -50,9 +50,8 @@ flask run
 
 ## Features
 
-- **Interactive Closet**: Browse through, edit, and discard each clothing item with ease.
-- **Outfit Maker**: Users can explore their unique style by mixing and matching their pieces to create and save a new outfit they've never tried wearing before, enhancing the creative interactive experience.
-
+- **Interactive Closet**: Browse through and discard each clothing item with ease.
+- **Outfit Maker**: Explore your unique style by mixing and matching pieces to create an outfit for every occasion and add it to your collection for a creative interactive experience.
 
 ## Tech Stack
 
@@ -64,13 +63,5 @@ flask run
 ### Backend
 
 - **Flask**: as the backend framework.
-- **SQLite3**: for the database to store user's items and outfits data.
+- **SQLite3**: for the database to store user's clothing items and outfits data.
 - **Flask Migrate**: for handling database migrations.
-
-## Database Schema
-
-
-
-## Example API Endpoints
-
-
