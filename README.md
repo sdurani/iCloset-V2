@@ -52,7 +52,7 @@ flask run
 
 - **Interactive Closet**: Browse through, edit, and discard each clothing item with ease.
 - **Outfit Maker**: Users can explore their unique style by mixing and matching their pieces to create and save a new outfit they've never tried wearing before, enhancing the creative interactive experience.
-- **Authentication**: Restricted access to ensure that the user's item images and details are kept private with secure login.
+
 
 ## Tech Stack
 
@@ -64,7 +64,7 @@ flask run
 ### Backend
 
 - **Flask**: as the backend framework.
-- **SQLite3**: for the database to store user and interaction data.
+- **SQLite3**: for the database to store user's items and outfits data.
 - **Flask Migrate**: for handling database migrations.
 
 ## Database Schema
