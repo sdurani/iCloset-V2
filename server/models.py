@@ -18,7 +18,7 @@ bcrypt = Bcrypt()
 
 
 # BUILD MODELS HERE ---------------------------------------------->
-class User(db.Model, SerializerMixin):
+class User(db.Model, SerializerMixin): # set up for future authentication/login feature
     __tablename__="users"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -61,7 +61,7 @@ class Item(db.Model, SerializerMixin):
     size = db.Column(db.String)
     image = db.Column(db.String)
 
-    outfititems = db.relationship('OutfitItem', back_populates='item')
+    outfititems = db.relationship('OutfitItem', back_populates='item', cascade='all, delete-orphan')
 
     serialize_rules = ('-outfititems.item',)
 
@@ -85,7 +85,7 @@ class OutfitItem(db.Model, SerializerMixin):
     outfit_id = db.Column(db.Integer, db.ForeignKey('outfits.id'), nullable=False)
     item_id = db.Column(db.Integer, db.ForeignKey('items.id'), nullable=False)
 
-    outfit = db.relationship('Outfit', back_populates='outfititems')
+    outfit = db.relationship('Outfit', back_populates='outfititems', cascade='all, delete-orphan', single_parent=True)
     item = db.relationship('Item', back_populates='outfititems')
 
     serialize_rules = ('-outfit.outfititems', '-item.outfititems',)
