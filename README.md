@@ -1,6 +1,7 @@
 # iCloset-V2
-
 Say goodbye to chaotic mornings spent trying to figure out what to wear for the day, and say hello to **iCloset**, the ultimate digital closet! Organize your pieces or use the Outfit Maker feature to create and save complete outfits with the click of a button. To get started, just add some details and a picture of your clothing piece!
+
+![Screenshot 2024-11-22 at 2 10 50 PM](https://github.com/user-attachments/assets/ebdf0b07-526e-4d0e-a9b4-d722d85fa155)
 
 Version 1: Aug. 22, 2024
     - frontend application only
